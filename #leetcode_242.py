@@ -1,5 +1,3 @@
-# 242. Valid Anagram
-
 class Solution:
     def isAnagram(self, s, t):
         if len(s) > len(t) or len(t) > len(s):
@@ -9,13 +7,17 @@ class Solution:
             if i not in has:
                 has[i] = 1
             else:
-                has[i] += 1     
+                has[i] += 1  
+        hash_ = {}           
         for j in t:
-            if j in has:
-                has[j] -= 1
+            if j not in hash_:
+                hash_[j] = 1
             else:
-                return 0
-        for k in has.values():
-            if k != 0:
-                return 0
+                hash_[j] += 1     
+        for k in s:
+            if k in has.keys() and k in hash_.keys():
+                if has[k] != hash_[k]:
+                    return 0
+            else:
+                return 0        
         return 1
