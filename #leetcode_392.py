@@ -1,6 +1,5 @@
 # 392. Is Subsequence
 
-
 class Solution:
     def isSubsequence(self, s, t):
         length = len(t)
