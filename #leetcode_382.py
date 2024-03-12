@@ -1,4 +1,4 @@
-# 382. BaseBall Game
+# 382. Baseball Game
 
 class Solution:
     def calPoints(self, operations):
