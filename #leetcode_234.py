@@ -1,5 +1,4 @@
 # 234. Palindrome Linked List
-
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -14,9 +13,17 @@ class Solution:
         while fast != None and fast.next != None:
             slow = slow.next
             fast = fast.next.next
-        if fast != None and fast.next == None:
-            slow = slow.next
-        slow = self.reverseList(slow)
+            sec_half = slow
+            if fast != None and fast.next != None and fast.next.next == None:
+               sec_half = slow.next
+               slow.next = None   
+               break
+        if fast != None and fast.next == None:   
+            
+            sec_half = slow.next
+            slow.next = None
+        slow = self.reverseList(sec_half)
+        rev_head = slow    
         while slow != None :
 
             if slow.val != temp.val:
@@ -43,5 +50,3 @@ class Solution:
         head=Center
         
         return head   
-
-        
