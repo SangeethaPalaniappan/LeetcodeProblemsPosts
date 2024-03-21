@@ -7,6 +7,8 @@
 
 class Solution:
     def isPalindrome(self, head):
+        if head.next == None:
+            return 1
         temp = head
         slow = head
         fast = head
