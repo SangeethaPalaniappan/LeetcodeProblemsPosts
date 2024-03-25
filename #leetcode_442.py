@@ -1,3 +1,5 @@
+# 442. Find All Duplicats in an  Array
+
 class Solution:
     def findDuplicates(self, nums):
         arr = []
