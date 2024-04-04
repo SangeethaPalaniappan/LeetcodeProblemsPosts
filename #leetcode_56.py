@@ -1,4 +1,4 @@
-# 56. Merge Interval
+# 56. Merge Intervals
 
 class Solution:
     def merge(self, intervals):
