@@ -1,5 +1,6 @@
 # 2073. Time Needed to Buy tickets
 
+
 class Solution:
     def timeRequiredToBuy(self, tickets, k):
         n = len(tickets)
