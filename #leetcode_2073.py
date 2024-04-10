@@ -1,21 +1,18 @@
-# 2073. Time Needed to Buy Tickets
+# 2073. Time Needed to Buy tickets
 
 class Solution:
     def timeRequiredToBuy(self, tickets, k):
-        start = 0
-        end = len(tickets)
-        count = 0
-        while start < end:
-            if tickets[start] > 0:
-                tickets[start] -= 1
-                if start == k and tickets[start] == 0:
-                    return count + 1 
-                
-                
-                count += 1        
-                
-            start += 1 
-            if start == end:
-                start = 0       
-                    
- 
+        n = len(tickets)
+        steps = 0
+        for i in range(n):
+            if i <= k:
+                if tickets[i] >= tickets[k]: 
+                    steps += tickets[k]
+                else:
+                    steps += tickets[i]
+            elif i > k:
+                if tickets[i] >= tickets[k]:
+                    steps += (tickets[k] - 1)            
+                else:
+                    steps += tickets[i]
+        return steps               
