@@ -7,13 +7,13 @@ class Solution:
 
         product = 1
         count = 0
-        left, right = 0, 0
+        left = 0
         n = len(nums)
-        while right < n:
+        for right in range(n):
             product *= nums[right]
             while product >= k:
                 product //= nums[left]
                 left += 1
             count += 1 + (right - left)
-            right += 1    
+   
         return count                
