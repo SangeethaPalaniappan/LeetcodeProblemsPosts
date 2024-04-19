@@ -1,4 +1,4 @@
-# 328. Odd Even Linked Lists
+# 328. Odd Even Linked List
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -6,7 +6,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def oddEvenList(self, head)
+    def oddEvenList(self, head):
         if head == None:
             return head
         temp_1 = head
