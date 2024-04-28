@@ -1,4 +1,4 @@
-#2706. Buy Two Chocolates
+# 2706. Buy Two Chocolates
 
 class Solution:
     def buyChoco(self, prices, money):
