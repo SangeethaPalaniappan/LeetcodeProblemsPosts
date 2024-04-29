@@ -2,23 +2,13 @@
 
 class Solution:
   def findIndices(self, nums, indexDifference, valueDifference):
-    min_ = 0
-    max_ = 0
-    min_max = []
-    
-    for i in range(len(nums)):
-      if nums[i] < nums[min_]:
-        min_ = i
-      if nums[i] > nums[max_]:
-        max_ = i
-      min_max.append([min_, max_])
-
-    for i in range(len(nums)):
-      j = i - indexDifference
-      if j >= 0:
-        if abs(nums[i] - nums[min_max[j][0]]) >= valueDifference:
-          return [min_max[j][0], i]
-        if abs(nums[i] - nums[min_max[j][1]]) >= valueDifference:
-          return [min_max[j][1], i]
-
-    return [-1, -1]
+    answer = [-1, -1]
+    m = valueDifference
+    n = indexDifference
+    length = len(nums)
+    for i in range(length - n):
+        for j in range(i + n , length):
+            if abs(i - j) >= n and abs(nums[i] - nums[j]) >= m:
+                
+                return [i , j]
+    return answer    
