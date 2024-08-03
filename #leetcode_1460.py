@@ -1,7 +1,7 @@
 # 1460. Make Two Arrays Equal by Reversing Subarrays
 
 class Solution:
-    def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+    def canBeEqual(self, target, arr):
         target.sort()
         arr.sort()
         if target == arr:
