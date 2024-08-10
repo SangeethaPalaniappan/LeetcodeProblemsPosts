@@ -12,6 +12,4 @@ class Solution:
                 start = mid + 1
             elif nums[mid] == target:
                 return mid
-        if target < nums[0]:
-            return 0
-        return mid + 1         
+        return start        
